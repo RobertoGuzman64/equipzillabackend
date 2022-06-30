@@ -3,8 +3,8 @@ const router = express.Router();
 const TwitterController = require('../controllers/TwitterController');
 
 
-router.get('/muestraTweets', TwitterController.muestraTweets);
+router.get('/guardaTweets', TwitterController.guardaTweets);
 
-router.post('/guardaTweets', TwitterController.guardaTweets);
+router.post('/guarda1Tweet', TwitterController.guarda1Tweet);
 
 module.exports = router;

@@ -4,6 +4,15 @@ const TwitterModel = require('../models/twitter.js');
 const TwitterController = {};
 
 
+TwitterController.verTweets = async (req, res) => {
+    try {
+        const tweets = await TwitterModel.find();
+        res.json(tweets);
+    } catch (error) {
+        res.json({ message: error });
+    }
+}
+
 TwitterController.buscaTweets = async (req, res) => {
     const solicitud = new Twitter({
         consumer_key: process.env.TWITTER_CONSUMER_KEY,

@@ -3,6 +3,10 @@ const router = express.Router();
 const TwitterController = require('../controllers/TwitterController');
 
 
+router.get('/', TwitterController.verTweets);
+// http://localhost:5000/twitter
+// https://equipzillabackend.herokuapp.com/twitter
+
 router.get('/buscaTweets', TwitterController.buscaTweets);
 // http://localhost:5000/twitter/buscaTweets
 // https://equipzillabackend.herokuapp.com/twitter/buscaTweets

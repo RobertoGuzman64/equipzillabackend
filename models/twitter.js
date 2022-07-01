@@ -28,9 +28,18 @@ const twitterSchema = new Schema({
       type: Array
     },
     urls: {
-      type: [
-        String
-      ]
+      url: {
+        type: String
+      },
+      expanded_url: {
+        type: String
+      },
+      display_url: {
+        type: String
+      },
+      indices: {
+        type: Array
+      }
     }
   },
   metadata: {

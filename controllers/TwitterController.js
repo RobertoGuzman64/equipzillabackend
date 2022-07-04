@@ -22,7 +22,7 @@ TwitterController.buscaTweets = async (req, res) => {
         timeout_ms: 60 * 1000,
         strictSSL: true
     });
-    solicitud.get('search/tweets', { q: '#elonmask', count: 100 }, function (error, data, response) {
+    solicitud.get('search/tweets', { recent: 'true', q: hastags = '#elonmusk', count: 100, lang: 'en' }, function (error, data, response) {
         res.json(data);
     }
     );
@@ -44,7 +44,7 @@ TwitterController.guardaTweets = async (req, res) => {
         timeout_ms: 60 * 1000,
         strictSSL: true
     });
-    solicitud.get('search/tweets', { q: '#elonmask', count: 100 }, function (error, data, response) {
+    solicitud.get('search/tweets', { recent: 'true', q: hastags = '#elonmusk', count: 100, lang: 'en' }, function (error, data, response) {
         const guardaDatos = (data) => {
             data.statuses.forEach(tweet => {
                 const twitter = new TwitterModel(tweet);
